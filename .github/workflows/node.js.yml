@@ -25,3 +25,8 @@ jobs:
       run: npm install
     - name: Run the tests
       run: npm run test
+    - name: Deploy to prod 
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with: 
+        service-id: ${{ secrets.RENDER_HOOK }}
+        api-key: ${{ secrets.RENDER_TOKEN }}
